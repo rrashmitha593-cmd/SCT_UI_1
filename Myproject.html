@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple Bookstore</title>
+
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+    body { background: #f5f5f5; color: #222; }
+
+    header {
+        background: #2c3e50;
+        padding: 20px;
+        color: white;
+        text-align: center;
+    }
+
+    nav {
+        background: #34495e;
+        padding: 10px;
+        text-align: center;
+    }
+
+    nav a {
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+    /* HERO SECTION WITH BACKGROUND IMAGE */
+    .hero {
+        padding: 100px 20px;
+        text-align: center;
+        color: white;
+        background-image: url('https://images.unsplash.com/photo-1514890547357-a9ee288728e0?w=1200');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+    }
+
+    /* Add dark overlay for readability */
+    .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.45);
+        z-index: 1;
+    }
+
+    .hero h1, .hero p {
+        position: relative;
+        z-index: 2;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+        font-weight: bold;
+    }
+
+    .hero p {
+        margin-top: 10px;
+        font-size: 18px;
+    }
+
+    .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: auto;
+        padding: 40px 0;
+    }
+
+    .book-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+    }
+
+    .book {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        text-align: center;
+    }
+
+    .book img {
+        width: 100%;
+        height: 270px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+
+    .book button {
+        background: #2c3e50;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        background: #2c3e50;
+        color: white;
+        margin-top: 30px;
+    }
+</style>
+
+</head>
+<body>
+
+<header>
+    <h1>BookNest Store</h1>
+    <p>Your friendly neighbourhood bookstore</p>
+</header>
+
+<nav>
+    <a href="#books">Books</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section class="hero">
+    <h1>Discover Your Next Favourite Book</h1>
+    <p>Explore hand-picked collections just for you</p>
+</section>
+
+<div class="container" id="books">
+    <h2 style="margin-bottom: 20px;">Featured Books</h2>
+
+    <div class="book-list">
+
+        <div class="book">
+            <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=500" alt="Book Cover">
+            <h3>The Silent Forest</h3>
+            <p>₹299</p>
+            <button onclick="addToCart('The Silent Forest')">Add to Cart</button>
+        </div>
+
+        <div class="book">
+            <img src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?w=500" alt="Book Cover">
+            <h3>Magic of Dreams</h3>
+            <p>₹199</p>
+            <button onclick="addToCart('Magic of Dreams')">Add to Cart</button>
+        </div>
+
+        <div class="book">
+            <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=500" alt="Book Cover">
+            <h3>Ocean Whispers</h3>
+            <p>₹249</p>
+            <button onclick="addToCart('Ocean Whispers')">Add to Cart</button>
+        </div>
+
+        <div class="book">
+            <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=500" alt="Book Cover">
+            <h3>Secret of the Stars</h3>
+            <p>₹349</p>
+            <button onclick="addToCart('Secret of the Stars')">Add to Cart</button>
+        </div>
+
+    </div>
+</div>
+
+<div class="container" id="about">
+    <h2>About Us</h2>
+    <p style="margin-top: 10px;">
+        BookNest Store is a small independent bookstore offering the best collection 
+        of fiction, non-fiction, children’s books and more.
+    </p>
+</div>
+
+<div class="container" id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: bookst69@gmail.com</p>
+    <p>Phone: +91 9999999999</p>
+</div>
+
+<footer>
+    © 2025 BookNest Store. All Rights Reserved.
+</footer>
+
+<script>
+    function addToCart(bookName) {
+        alert(bookName + " added to cart!");
+    }
+</script>
+</body>
+</html>
